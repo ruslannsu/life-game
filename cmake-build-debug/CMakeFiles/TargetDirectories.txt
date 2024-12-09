@@ -10,3 +10,6 @@ C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug/lib/modes/online_m
 C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug/lib/file/CMakeFiles/file.dir
 C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug/lib/file/CMakeFiles/edit_cache.dir
 C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug/lib/file/CMakeFiles/rebuild_cache.dir
+C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug/lib/game/CMakeFiles/game.dir
+C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug/lib/game/CMakeFiles/edit_cache.dir
+C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug/lib/game/CMakeFiles/rebuild_cache.dir

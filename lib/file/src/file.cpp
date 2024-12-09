@@ -12,6 +12,7 @@ File::File(std::string path)
     size_t string_counter = 0;
     if (file.is_open())
     {
+        std::cout << "file has opened" << std::endl;
         while(getline(file, buffer))
         {
             if (string_counter == 0)
@@ -42,6 +43,9 @@ File::File(std::string path)
     }
 
 }
+std::vector<Components> File::get_cells(){return cells;}
+std::string File::get_rules(){return rules;}
+Components File::get_field_size(){return field_size;}
 
 
 void File::parse_cells(std::string buffer)

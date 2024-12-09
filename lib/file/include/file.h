@@ -21,13 +21,18 @@ public:
     void scan_version(std::string buffer);
     void scan_field_size(std::string buffer);
     void write_field_to_file();
+    std::vector<Components> get_cells();
+    std::string get_rules();
+    Components get_field_size();
 
-public:
+private:
     std::vector<Components> cells;
     std::string rules;
     std::string version;
     Components field_size;
 
 };
+
+
 
 

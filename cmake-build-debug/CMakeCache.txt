@@ -279,13 +279,13 @@ field_IS_TOP_LEVEL:STATIC=OFF
 field_SOURCE_DIR:STATIC=C:/Users/Руслан/Desktop/OOP_labs/lab2/lib/field
 
 //Value Computed by CMake
-file_BINARY_DIR:STATIC=C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug/lib/file
+file_BINARY_DIR:STATIC=C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug/lib/game
 
 //Value Computed by CMake
 file_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-file_SOURCE_DIR:STATIC=C:/Users/Руслан/Desktop/OOP_labs/lab2/lib/file
+file_SOURCE_DIR:STATIC=C:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game
 
 //Value Computed by CMake
 lab2_BINARY_DIR:STATIC=C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug
@@ -417,7 +417,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -12,9 +12,10 @@ add_subdirectory(lib/modes/online_mode)
 
 add_subdirectory(lib/file)
 
+add_subdirectory(lib/game)
 
-include_directories(lib/field/include lib/modes/online_mode/include lib/file/include)
+include_directories(lib/field/include lib/modes/online_mode/include lib/file/include lib/game/include)
 
 add_executable(my_executable src/main.cpp)
 
-target_link_libraries(my_executable field online_mode file)
+target_link_libraries(my_executable field online_mode file game)

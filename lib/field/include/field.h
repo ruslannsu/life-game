@@ -4,7 +4,11 @@
 #include "file.h"
 
 
-
+struct Range
+{
+    size_t left;
+    size_t right;
+};
 class Field
 {
 public:
@@ -18,12 +22,10 @@ public:
     void create_next_gen();
 
 
-
-
 public:
     size_t x_size;
     size_t y_size;
     std::vector<std::string> field;
-    size_t cell_to_birth;
-    size_t cells_to_survive;
+    Range cells_to_birth;
+    Range cells_to_survive;
 };
