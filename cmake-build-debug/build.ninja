@@ -47,12 +47,12 @@ cmake_ninja_workdir = C$:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-d
 #############################################
 # Order-only phony target for my_executable
 
-build cmake_object_order_depends_target_my_executable: phony || cmake_object_order_depends_target_field cmake_object_order_depends_target_file cmake_object_order_depends_target_game cmake_object_order_depends_target_online_mode
+build cmake_object_order_depends_target_my_executable: phony || cmake_object_order_depends_target_field cmake_object_order_depends_target_file cmake_object_order_depends_target_game
 
 build CMakeFiles/my_executable.dir/src/main.cpp.obj: CXX_COMPILER__my_executable_unscanned_Debug C$:/Users/Руслан/Desktop/OOP_labs/lab2/src/main.cpp || cmake_object_order_depends_target_my_executable
   DEP_FILE = CMakeFiles\my_executable.dir\src\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/field/include -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/modes/online_mode/include -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/file/include -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game/include
+  INCLUDES = -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game/include -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/field/include -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/file/include
   OBJECT_DIR = CMakeFiles\my_executable.dir
   OBJECT_FILE_DIR = CMakeFiles\my_executable.dir\src
 
@@ -64,9 +64,9 @@ build CMakeFiles/my_executable.dir/src/main.cpp.obj: CXX_COMPILER__my_executable
 #############################################
 # Link the executable my_executable.exe
 
-build my_executable.exe: CXX_EXECUTABLE_LINKER__my_executable_Debug CMakeFiles/my_executable.dir/src/main.cpp.obj | lib/field/libfield.a lib/modes/online_mode/libonline_mode.a lib/file/libfile.a lib/game/libgame.a || lib/field/libfield.a lib/file/libfile.a lib/game/libgame.a lib/modes/online_mode/libonline_mode.a
+build my_executable.exe: CXX_EXECUTABLE_LINKER__my_executable_Debug CMakeFiles/my_executable.dir/src/main.cpp.obj | lib/game/libgame.a lib/field/libfield.a lib/file/libfile.a || lib/field/libfield.a lib/file/libfile.a lib/game/libgame.a
   FLAGS = -g
-  LINK_LIBRARIES = lib/field/libfield.a  lib/modes/online_mode/libonline_mode.a  lib/file/libfile.a  lib/game/libgame.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = lib/game/libgame.a  lib/field/libfield.a  lib/file/libfile.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\my_executable.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -96,6 +96,66 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
   restat = 1
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/Руслан/Desktop/OOP_labs/lab2/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target file
+
+
+#############################################
+# Order-only phony target for file
+
+build cmake_object_order_depends_target_file: phony || .
+
+build lib/file/CMakeFiles/file.dir/src/file.cpp.obj: CXX_COMPILER__file_unscanned_Debug C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/file/src/file.cpp || cmake_object_order_depends_target_file
+  DEP_FILE = lib\file\CMakeFiles\file.dir\src\file.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/file/include
+  OBJECT_DIR = lib\file\CMakeFiles\file.dir
+  OBJECT_FILE_DIR = lib\file\CMakeFiles\file.dir\src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target file
+
+
+#############################################
+# Link the static library lib\file\libfile.a
+
+build lib/file/libfile.a: CXX_STATIC_LIBRARY_LINKER__file_Debug lib/file/CMakeFiles/file.dir/src/file.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = lib\file\CMakeFiles\file.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = lib\file\libfile.a
+  TARGET_PDB = file.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build lib/file/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Руслан\Desktop\OOP_labs\lab2\cmake-build-debug\lib\file && "C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build lib/file/edit_cache: phony lib/file/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build lib/file/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Руслан\Desktop\OOP_labs\lab2\cmake-build-debug\lib\file && "C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\Руслан\Desktop\OOP_labs\lab2 -BC:\Users\Руслан\Desktop\OOP_labs\lab2\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build lib/file/rebuild_cache: phony lib/file/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -163,126 +223,6 @@ build lib/field/rebuild_cache: phony lib/field/CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for STATIC_LIBRARY target online_mode
-
-
-#############################################
-# Order-only phony target for online_mode
-
-build cmake_object_order_depends_target_online_mode: phony || .
-
-build lib/modes/online_mode/CMakeFiles/online_mode.dir/src/online_mode.cpp.obj: CXX_COMPILER__online_mode_unscanned_Debug C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/modes/online_mode/src/online_mode.cpp || cmake_object_order_depends_target_online_mode
-  DEP_FILE = lib\modes\online_mode\CMakeFiles\online_mode.dir\src\online_mode.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/modes/online_mode/include -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/modes/online_mode/../../field/include -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/modes/online_mode/../../file/include
-  OBJECT_DIR = lib\modes\online_mode\CMakeFiles\online_mode.dir
-  OBJECT_FILE_DIR = lib\modes\online_mode\CMakeFiles\online_mode.dir\src
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target online_mode
-
-
-#############################################
-# Link the static library lib\modes\online_mode\libonline_mode.a
-
-build lib/modes/online_mode/libonline_mode.a: CXX_STATIC_LIBRARY_LINKER__online_mode_Debug lib/modes/online_mode/CMakeFiles/online_mode.dir/src/online_mode.cpp.obj
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = lib\modes\online_mode\CMakeFiles\online_mode.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = lib\modes\online_mode\libonline_mode.a
-  TARGET_PDB = online_mode.a.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build lib/modes/online_mode/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Руслан\Desktop\OOP_labs\lab2\cmake-build-debug\lib\modes\online_mode && "C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build lib/modes/online_mode/edit_cache: phony lib/modes/online_mode/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build lib/modes/online_mode/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Руслан\Desktop\OOP_labs\lab2\cmake-build-debug\lib\modes\online_mode && "C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\Руслан\Desktop\OOP_labs\lab2 -BC:\Users\Руслан\Desktop\OOP_labs\lab2\cmake-build-debug"
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build lib/modes/online_mode/rebuild_cache: phony lib/modes/online_mode/CMakeFiles/rebuild_cache.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# C:/Users/Руслан/Desktop/OOP_labs/lab2/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target file
-
-
-#############################################
-# Order-only phony target for file
-
-build cmake_object_order_depends_target_file: phony || .
-
-build lib/file/CMakeFiles/file.dir/src/file.cpp.obj: CXX_COMPILER__file_unscanned_Debug C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/file/src/file.cpp || cmake_object_order_depends_target_file
-  DEP_FILE = lib\file\CMakeFiles\file.dir\src\file.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/file/include -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/file/../field/include
-  OBJECT_DIR = lib\file\CMakeFiles\file.dir
-  OBJECT_FILE_DIR = lib\file\CMakeFiles\file.dir\src
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target file
-
-
-#############################################
-# Link the static library lib\file\libfile.a
-
-build lib/file/libfile.a: CXX_STATIC_LIBRARY_LINKER__file_Debug lib/file/CMakeFiles/file.dir/src/file.cpp.obj
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = lib\file\CMakeFiles\file.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = lib\file\libfile.a
-  TARGET_PDB = file.a.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build lib/file/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Руслан\Desktop\OOP_labs\lab2\cmake-build-debug\lib\file && "C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build lib/file/edit_cache: phony lib/file/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build lib/file/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Руслан\Desktop\OOP_labs\lab2\cmake-build-debug\lib\file && "C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\Руслан\Desktop\OOP_labs\lab2 -BC:\Users\Руслан\Desktop\OOP_labs\lab2\cmake-build-debug"
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build lib/file/rebuild_cache: phony lib/file/CMakeFiles/rebuild_cache.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# C:/Users/Руслан/Desktop/OOP_labs/lab2/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
 # Object build statements for STATIC_LIBRARY target game
 
 
@@ -294,7 +234,7 @@ build cmake_object_order_depends_target_game: phony || .
 build lib/game/CMakeFiles/game.dir/src/game.cpp.obj: CXX_COMPILER__game_unscanned_Debug C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game/src/game.cpp || cmake_object_order_depends_target_game
   DEP_FILE = lib\game\CMakeFiles\game.dir\src\game.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game/include -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game/../modes/online_mode/include
+  INCLUDES = -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game/include -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game/../field/include -IC:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game/../file/include
   OBJECT_DIR = lib\game\CMakeFiles\game.dir
   OBJECT_FILE_DIR = lib\game\CMakeFiles\game.dir\src
 
@@ -352,11 +292,7 @@ build libfile.a: phony lib/file/libfile.a
 
 build libgame.a: phony lib/game/libgame.a
 
-build libonline_mode.a: phony lib/modes/online_mode/libonline_mode.a
-
 build my_executable: phony my_executable.exe
-
-build online_mode: phony lib/modes/online_mode/libonline_mode.a
 
 # =============================================================================
 # Folder targets.
@@ -366,7 +302,7 @@ build online_mode: phony lib/modes/online_mode/libonline_mode.a
 #############################################
 # Folder: C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug
 
-build all: phony my_executable.exe lib/field/all lib/modes/online_mode/all lib/file/all lib/game/all
+build all: phony my_executable.exe lib/file/all lib/field/all lib/game/all
 
 # =============================================================================
 
@@ -390,27 +326,20 @@ build lib/file/all: phony lib/file/libfile.a
 build lib/game/all: phony lib/game/libgame.a
 
 # =============================================================================
-
-#############################################
-# Folder: C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug/lib/modes/online_mode
-
-build lib/modes/online_mode/all: phony lib/modes/online_mode/libonline_mode.a
-
-# =============================================================================
 # Built-in targets
 
 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake C$:/Users/Руслан/Desktop/OOP_labs/lab2/CMakeLists.txt C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/field/CMakeLists.txt C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/file/CMakeLists.txt C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game/CMakeLists.txt C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/modes/online_mode/CMakeLists.txt CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeRCCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake C$:/Users/Руслан/Desktop/OOP_labs/lab2/CMakeLists.txt C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/field/CMakeLists.txt C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/file/CMakeLists.txt C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game/CMakeLists.txt CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeRCCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake C$:/Users/Руслан/Desktop/OOP_labs/lab2/CMakeLists.txt C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/field/CMakeLists.txt C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/file/CMakeLists.txt C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game/CMakeLists.txt C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/modes/online_mode/CMakeLists.txt CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeRCCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake C$:/Users/Руслан/Desktop/OOP_labs/lab2/CMakeLists.txt C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/field/CMakeLists.txt C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/file/CMakeLists.txt C$:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game/CMakeLists.txt CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeRCCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake: phony
 
 
 #############################################

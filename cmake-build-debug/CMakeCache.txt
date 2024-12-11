@@ -128,7 +128,7 @@ CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/lab2
 CMAKE_LINKER:FILEPATH=C:/Program Files/JetBrains/CLion 2024.2.1/bin/mingw/bin/ld.exe
 
 //make program
-CMAKE_MAKE_PROGRAM:FILEPATH=C:/Program Files/JetBrains/CLion 2024.2.1/bin/ninja/win/x64/ninja.exe
+CMAKE_MAKE_PROGRAM:FILEPATH=C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/ninja/win/x64/ninja.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -279,13 +279,22 @@ field_IS_TOP_LEVEL:STATIC=OFF
 field_SOURCE_DIR:STATIC=C:/Users/Руслан/Desktop/OOP_labs/lab2/lib/field
 
 //Value Computed by CMake
-file_BINARY_DIR:STATIC=C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug/lib/game
+file_BINARY_DIR:STATIC=C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug/lib/file
 
 //Value Computed by CMake
 file_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-file_SOURCE_DIR:STATIC=C:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game
+file_SOURCE_DIR:STATIC=C:/Users/Руслан/Desktop/OOP_labs/lab2/lib/file
+
+//Value Computed by CMake
+game_BINARY_DIR:STATIC=C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug/lib/game
+
+//Value Computed by CMake
+game_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+game_SOURCE_DIR:STATIC=C:/Users/Руслан/Desktop/OOP_labs/lab2/lib/game
 
 //Value Computed by CMake
 lab2_BINARY_DIR:STATIC=C:/Users/Руслан/Desktop/OOP_labs/lab2/cmake-build-debug
@@ -417,7 +426,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -12,7 +12,6 @@ struct Components
 class File
 {
 public:
-    File();
     File(std::string path);
     void scan_field_file();
     void parse_cells(std::string buffer);
@@ -30,7 +29,6 @@ private:
     std::string rules;
     std::string version;
     Components field_size;
-
 };
 
 

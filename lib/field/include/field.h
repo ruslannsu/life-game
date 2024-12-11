@@ -3,7 +3,6 @@
 #include <string>
 #include "file.h"
 
-
 struct Range
 {
     size_t left;
@@ -18,7 +17,10 @@ public:
     Field(Field &other);
     size_t get_x_size();
     size_t get_y_size();
+    std::vector<std::string> get_field();
+
     size_t count_neighbors(int x, int y);
+    void insert_cell(size_t x, size_t y);
     void create_next_gen();
 
 

@@ -1,16 +1,13 @@
 #include <iostream>
 #include "field.h"
 #include "file.h"
-#include <stdlib.h>
 #include <thread>
 #include <chrono>
+#include <game.h>
 
 
-
-int main()
+int main(int argc, char *argv[])
 {
-
-    Field f(File("../src/files/input/input.txt"));
-    std::cout << f.cells_to_survive.right << std::endl;
-
+    Game game = Game(argc, argv);
+    game.start_game();
 }

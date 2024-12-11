@@ -2,7 +2,6 @@
 #include "fstream"
 
 
-//File::File(): cells(1, {0, 0}), rules("#R B5/S3"), version("#Life 1.06"), field_size("10 10"){}
 
 
 File::File(std::string path)
@@ -10,6 +9,7 @@ File::File(std::string path)
     std::string buffer;
     std::ifstream file(path);
     size_t string_counter = 0;
+
     if (file.is_open())
     {
         std::cout << "file has opened" << std::endl;
@@ -41,6 +41,11 @@ File::File(std::string path)
             }
         }
     }
+    else
+    {
+        throw std::invalid_argument("Incorrect path!");
+    }
+
 
 }
 std::vector<Components> File::get_cells(){return cells;}

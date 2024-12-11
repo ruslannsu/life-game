@@ -3,7 +3,7 @@ project(file)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories(include ../field/include)
+include_directories(include)
 
 add_library(file src/file.cpp)
 
