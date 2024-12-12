@@ -24,6 +24,4 @@ private:
     bool exit;
     bool offline_mode;
     size_t iterations;
-
-
 };

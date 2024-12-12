@@ -3,37 +3,20 @@
 
 
 
-Field::Field():field(1, std::string(1, '0'))
-{
-}
+Field::Field():field(1, std::string(1, '0')){}
 
+std::vector<std::string> Field::get_field(){return field;}
 
+size_t Field::get_x_size(){return x_size;}
 
-std::vector<std::string> Field::get_field()
-{
-    return field;
-}
-
-
-
-
-size_t Field::get_x_size()
-{
-    return x_size;
-}
-
-size_t Field::get_y_size()
-{
-    return y_size;
-}
+size_t Field::get_y_size(){return y_size;}
 
 Field::Field(File file)
 {
-    std::cout << "here";
     x_size = file.get_field_size().x;
     y_size = file.get_field_size().y;
 
-    field = std::vector<std::string>(x_size, std::string(y_size, '0'));
+    field = std::vector<std::string>(x_size, std::string(y_size, ' '));
     std::string temp_rules = file.get_rules();
     if (temp_rules.substr(0, 4) != std::string("#R B"))
     {
@@ -107,7 +90,7 @@ size_t Field::count_neighbors(int x, int y)
 
 void Field::create_next_gen()
 {
-    std::vector<std::string> next_field(x_size, std::string(y_size, '0'));
+    std::vector<std::string> next_field(x_size, std::string(y_size, ' '));
     for (size_t i = 0; i != x_size; ++i)
     {
         for (size_t j = 0; j != y_size; j++)
@@ -125,7 +108,7 @@ void Field::create_next_gen()
             }
             if (((count != 2) && (count != 3)))
             {
-                next_field[i][j] = '0';
+                next_field[i][j] = ' ';
             }
         }
     }

@@ -14,7 +14,6 @@ void Game::print_field()
             std::cout << t_field[i][j] << " ";
         }
         std::cout << std::endl;
-        //std::cout << t_field.at(i) << std::endl;
     }
 }
 
@@ -23,16 +22,13 @@ Game::Game(int argc, char *argv[]): iterations(1), offline_mode(false), exit(fal
     std::map<std::string, int> command_map = {
         {"dump", 0},
         {"tick", 1},
-        {"exit", 2},
-        {"help", 3},
-        {"--iterations=", 4},
-        {"--output=", 5},
-        {"input", 6}
-
+        {"--i", 2},
+        {"--o", 3},
+        {"input", 4}
     };
-    for (size_t i = 1; i != argc - 1; ++i)
+    for (size_t i = 1; i != argc; i+=2)
     {
-        std::cout << command_map[argv[i]];
+        //std::cout << command_map[argv[i]];
         switch (command_map[std::string(argv[i])])
         {
             case 0:
@@ -43,69 +39,31 @@ Game::Game(int argc, char *argv[]): iterations(1), offline_mode(false), exit(fal
             case 1:
                 iterations = stoi(std::string(argv[i + 1]));
                 break;
+
             case 2:
-                exit = true;
-                break;
-            case 3:
-                help = true;
-                break;
-            case 4:
                 iterations = stoi(std::string(argv[i + 1]));
                 offline_mode = true;
                 break;
-            case 5:
+            case 3:
                 o_file_path = std::string(argv[i + 1]);
                 offline_mode = true;
                 break;
-            case 6:
+            case 4:
                 i_file_path = std::string(argv[i + 1]);
                 break;
             default:
                 break;
         }
     }
-    /*
-    for (size_t i = 1; i != argc; ++i)
-    {
-        std::string arg = std::string(argv[i]);
-        if ((std::string("dump") == std::string(arg)))
-        {
-            o_file_path = std::string(argv[i + 1]);
-        }
-        if (std::string("tick") == std::string(arg))
-        {
-            iterations = stoi(std::string(argv[i + 1]));
-        }
-        if (std::string("exit") == std::string(arg))
-        {
-            exit = true;
-        }
-        if (std::string("help") == std::string(arg))
-        {
-            help = true;
-        }
-        if (std::string("-i") == arg)
-        {
-            iterations = stoi(std::string(argv[i + 1]));
-            offline_mode = true;
-        }
-        if (std::string("-o") == arg)
-        {
-            o_file_path = std::string(argv[i + 1]);
-            offline_mode = true;
-        }
-        if (std::string("input") == arg)
-        {
-            i_file_path = std::string(argv[i + 1]);
-        }
-    }
-    */
+    std::cout << o_file_path << std::endl;
     if (i_file_path.empty())
     {
-        //
+        field = Field(File("../src/files/examples/pulsar.txt"));
     }
-    field = Field(File(i_file_path));
-
+    else
+    {
+        field = Field(File(i_file_path));
+    }
 }
 
 
@@ -124,17 +82,24 @@ void Game::save_field()
             file << std::endl;
         }
     }
+    else
+    {
+        throw(std::invalid_argument("Incorrect output file path"));
+    }
 }
 
 
 
 void Game::start_game()
 {
-
     if (offline_mode)
     {
-        File output(o_file_path);
-
+        for (size_t i = 0; i != iterations; ++i)
+        {
+            field.create_next_gen();
+        }
+        save_field();
+        return;
     }
     for (size_t i = 0; i != iterations; ++i)
     {
@@ -142,11 +107,9 @@ void Game::start_game()
         system("cls");
         field.create_next_gen();
         print_field();
-        //std::this_thread::sleep_for(std::chrono::milliseconds(400));
     }
     if (!o_file_path.empty())
     {
         save_field();
     }
-
 }

@@ -57,10 +57,17 @@ void File::parse_cells(std::string buffer)
 {
     for (size_t i = 0; i != buffer.size(); ++i)
     {
-        if (buffer.at(i) == ' ')
+        try
         {
-            this->cells.push_back({static_cast<size_t>(std::stoi(buffer.substr(0, i))),static_cast<size_t>(std::stoi(buffer.substr(i, buffer.size())))});
-            break;
+            if (buffer.at(i) == ' ')
+            {
+                this->cells.push_back({static_cast<size_t>(std::stoi(buffer.substr(0, i))),static_cast<size_t>(std::stoi(buffer.substr(i, buffer.size())))});
+                break;
+            }
+        }
+        catch (std::invalid_argument&)
+        {
+            throw(std::invalid_argument("bad vector1"));
         }
     }
 }
@@ -68,10 +75,17 @@ void File::parse_size(std::string buffer)
 {
     for (size_t i = 0; i != buffer.size(); ++i)
     {
-        if (buffer.at(i) == ' ')
+        try
         {
-            this->field_size = {static_cast<size_t>(std::stoi(buffer.substr(0, i))),static_cast<size_t>(std::stoi(buffer.substr(i, buffer.size())))};
-            break;
+            if (buffer.at(i) == ' ')
+            {
+                this->field_size = {static_cast<size_t>(std::stoi(buffer.substr(0, i))),static_cast<size_t>(std::stoi(buffer.substr(i, buffer.size())))};
+                break;
+            }
+        }
+        catch (std::invalid_argument&)
+        {
+            throw(std::invalid_argument("bad vector"));
         }
     }
 }
