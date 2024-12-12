@@ -14,6 +14,7 @@ public:
     Game();
     Game(int argc, char *argv[]);
     void print_field();
+    void start_dialogue();
     void start_game();
     void save_field();
 private:

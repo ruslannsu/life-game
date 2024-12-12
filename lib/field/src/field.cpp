@@ -5,7 +5,7 @@
 
 Field::Field():field(1, std::string(1, '0')){}
 
-std::vector<std::string> Field::get_field(){return field;}
+std::vector<std::string>& Field::get_field() {return field;}
 
 size_t Field::get_x_size(){return x_size;}
 
@@ -96,17 +96,18 @@ void Field::create_next_gen()
         for (size_t j = 0; j != y_size; j++)
         {
             size_t count = count_neighbors(i ,j);
-            if (((count == 2) || (count == 3)) && field[i][j] == '#')
+           // std::cout << cells_to_survive.right;
+            if (((count >= cells_to_survive.left) && (count <= cells_to_survive.right)) && field[i][j] == '#')
             {
                 next_field[i][j] = '#';
                 continue;
             }
-            if (count == 3)
+            if (count == cells_to_birth.right)
             {
                 next_field[i][j] = '#';
                 continue;
             }
-            if (((count != 2) && (count != 3)))
+            if (((count < cells_to_survive.left) && (count > cells_to_survive.right)))
             {
                 next_field[i][j] = ' ';
             }

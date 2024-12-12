@@ -6,12 +6,12 @@
 
 void Game::print_field()
 {
-    std::vector <std::string> t_field = field.get_field();
+    std::vector <std::string>& temp_field = field.get_field();
     for (size_t i = 0; i != field.get_x_size(); ++i)
     {
         for (size_t j  = 0; j != field.get_y_size(); ++j)
         {
-            std::cout << t_field[i][j] << " ";
+            std::cout << temp_field[i][j] << " ";
         }
         std::cout << std::endl;
     }
@@ -70,14 +70,14 @@ Game::Game(int argc, char *argv[]): iterations(1), offline_mode(false), exit(fal
 void Game::save_field()
 {
     std::fstream file(o_file_path);
-    std::vector<std::string> t_field = field.get_field();
+    std::vector<std::string>& temp_field = field.get_field();
     if (file.is_open())
     {
         for (size_t i = 0; i != field.get_x_size(); ++i)
         {
             for (size_t j = 0; j != field.get_y_size(); ++j)
             {
-                file << t_field[i][j] << " ";
+                file << temp_field[i][j] << " ";
             }
             file << std::endl;
         }
@@ -90,8 +90,35 @@ void Game::save_field()
 
 
 
+
+
 void Game::start_game()
 {
+    std::map<std::string, int> command_map =
+    {
+        {"exit", 0},
+        {"help", 1},
+        {"start", 2}
+    };
+    std::string input;
+    while (input != "start")
+    {
+        std::cout << "Enter 'start to start a game, enter 'help' to get information about commands or enter 'exit' to stop the game" << std::endl;
+        std::cin >> input;
+        switch (command_map[input])
+        {
+            case 0:
+                return;
+            case 1:
+                std::cout << "Use dump<path> to save file" << std::endl;
+                std::cout << "Use tick<n> to set iterations";
+                std::cout << "Use --i<n> to set iterations in offline mode and use --o to set output path in offline mode" << std::endl;
+                std::cout << "Use input<path> to create game from the file" << std::endl;
+            break;
+
+
+        }
+    }
     if (offline_mode)
     {
         for (size_t i = 0; i != iterations; ++i)

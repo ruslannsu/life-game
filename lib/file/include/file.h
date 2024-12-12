@@ -14,7 +14,7 @@ class File
 public:
     File(std::string path);
     void scan_field_file();
-    void parse_cells(std::string buffer);
+    //void parse_cells(std::string buffer);
     void parse_size(std::string buffer);
     void scan_rules(std::string buffer);
     void scan_version(std::string buffer);
