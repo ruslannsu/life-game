@@ -9,11 +9,13 @@
 
 class Game
 {
+    //friend Field;
 public:
     Game();
     Game(int argc, char *argv[]);
     void print_field();
     void start_game();
+    void save_field();
 private:
     Field field;
     std::string i_file_path;

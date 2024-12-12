@@ -131,3 +131,4 @@ void Field::create_next_gen()
     }
     field = next_field;
 }
+

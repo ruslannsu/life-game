@@ -24,7 +24,7 @@ public:
     void create_next_gen();
 
 
-public:
+private:
     size_t x_size;
     size_t y_size;
     std::vector<std::string> field;
