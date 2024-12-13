@@ -26,7 +26,7 @@ Game::Game(int argc, char *argv[]): iterations(1), offline_mode(false), exit(fal
         {"--o", 3},
         {"input", 4}
     };
-    for (size_t i = 1; i != argc; i+=2)
+    for (size_t i = 1; i != argc; i += 2)
     {
         //std::cout << command_map[argv[i]];
         switch (command_map[std::string(argv[i])])
@@ -103,14 +103,14 @@ void Game::start_game()
     std::string input;
     while (input != "start")
     {
-        std::cout << "Enter 'start to start a game, enter 'help' to get information about commands or enter 'exit' to stop the game" << std::endl;
+        std::cout << "Enter 'start to start the game, enter 'help' to get information about commands or enter 'exit' to stop the game" << std::endl;
         std::cin >> input;
         switch (command_map[input])
         {
             case 0:
                 return;
             case 1:
-                std::cout << "Use dump<path> to save file" << std::endl;
+                std::cout << "Use dump<path> to save game in the file" << std::endl;
                 std::cout << "Use tick<n> to set iterations";
                 std::cout << "Use --i<n> to set iterations in offline mode and use --o to set output path in offline mode" << std::endl;
                 std::cout << "Use input<path> to create game from the file" << std::endl;

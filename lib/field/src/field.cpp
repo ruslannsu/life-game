@@ -113,6 +113,6 @@ void Field::create_next_gen()
             }
         }
     }
-    field = next_field;
+    field = std::move(next_field);
 }
 

@@ -1,4 +1,3 @@
-
 #include "file.h"
 #include "field.h"
 #include <chrono>
@@ -9,7 +8,7 @@
 
 class Game
 {
-    //friend Field;
+
 public:
     Game();
     Game(int argc, char *argv[]);
